@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="wow to Your Vue.js App"/>
-</template>
-
+   <Header  v-if="showHeader"></Header>
+   <router-view class="view"/>
+  </template>
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "../src/components/global/Header.vue";
+//import FooterStore from "@/components/global/FooterStore.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Header,
+    //FooterStore
+  },
+  computed: {
+    showHeader() {
+      return this.$store.state.showHeader;
+    }
   }
-}
+  // computed: {
+  //   getDarkMode() {
+  //     return this.$store.state.darkMode;
+  //   },
+  // },
+};
 </script>
-
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
 </style>
