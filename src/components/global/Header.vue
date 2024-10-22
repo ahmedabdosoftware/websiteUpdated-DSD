@@ -1,7 +1,8 @@
 <template>
     <header>
       <div :lang="myLanguage" id="logo-cont" class="logo-cont"> 
-      <img class="logoImge" src="../../assets/images/logo.png">
+      <!-- <img class="logoImge" src="../../assets/images/logo.png"> -->
+      <img class="logoImge" src="../../assets/images/logoFutec2.png">
       </div>
       <ul id="nav">
         <li>

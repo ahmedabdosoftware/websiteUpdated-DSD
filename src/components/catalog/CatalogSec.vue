@@ -20,7 +20,7 @@
             <div>
               <select placeholder="filter"  class="filter categoriesFilter"  v-model="selectedCategory">
                 <option>all</option>
-                <option v-for="category in categories" :value="category.id" :key="category.id">
+                <option v-for="category in filteredCategories" :value="category.id" :key="category.id">
                    {{ category.name }}
                 </option>
               </select>
@@ -140,7 +140,14 @@ import 'swiper/css/navigation';
 
       ...mapState(useProductsStore, ['products']),
       ...mapState(useCategoriesStore, ['categories']),
-  
+
+     // filtered Categories 
+      filteredCategories() {
+      
+      return this.categories.filter(category =>
+        category.service == 1
+    );
+  },
     // ============ filter => start=======================================
           
           getProduct() {

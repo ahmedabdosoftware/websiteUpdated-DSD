@@ -100,7 +100,7 @@ $bg-dark: rgb(42, 42, 112);
 .BackgroundApp{
   // fill his parent
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   //background-color: rgb(97, 82, 82);
   background-image: url("../assets/images/hero-bg.jpg");
   background-repeat: no-repeat;
@@ -117,10 +117,9 @@ $bg-dark: rgb(42, 42, 112);
   @extend %flex;
   flex-direction: column;
   align-items: center;
-  width:45%;
+  width:55%;
   height: 450px;
   color: white;
- // background-color: skyblue;
   >p{
     text-align: start;
   }
@@ -129,7 +128,7 @@ $bg-dark: rgb(42, 42, 112);
   }
   >p:first-child{
     font: {
-      size:40px;
+      size:30px;
       weight:600 ;
       
       
@@ -143,7 +142,7 @@ $bg-dark: rgb(42, 42, 112);
     line-height: 40px;
 
     font: {
-      size:24px;
+      size:20px;
       weight:600 ;
     }
   }
@@ -159,6 +158,7 @@ $bg-dark: rgb(42, 42, 112);
       width: 180px;
       height: 70px;
       border-radius: 25px;
+      margin-top: 14px;
       cursor: pointer;
       border: white 3px solid;
       transition:transform 200ms ease-in-out ;
@@ -176,13 +176,14 @@ $bg-dark: rgb(42, 42, 112);
     }
     button:first-child{
       width: 320px;
-      margin-right: 15px;
       background-color: white;
       color:$bg-dark;
     }
     button:nth-child(2){
       color: white;
       background-color: $bg-dark;
+      margin-left: 55px;
+
       &:hover {
         color: $bg-dark;
         background-color: white;
@@ -196,7 +197,6 @@ $bg-dark: rgb(42, 42, 112);
 .BackgroundApp_contSwiper{
   width:45%;
   height: 500px;
- // background-color: rgb(79, 101, 109);
   
 }
 
@@ -249,10 +249,30 @@ $bg-dark: rgb(42, 42, 112);
      // background-color: rgb(145, 117, 117);
     }
     
+    >p:first-child{
+      font: {
+        size:40px;
+        weight:600 ;
+          
+      }
+  }
+  
+    >p:nth-child(2){
+      font: {
+        size:24px;
+        weight:600 ;
+      }
+    }
+    
     >div{
       justify-content: flex-end;
     }
-
+    button:nth-child(2){
+      color: white;
+      background-color: $bg-dark;
+      margin-left: 0px;
+      margin-right: 55px;
+  }
   }
 
 
@@ -273,7 +293,7 @@ $bg-dark: rgb(42, 42, 112);
     height: 600px;
   }
   
-   
+  
 .BackgroundApp_contContent{ 
   width:440px;
   //background-color: red;
@@ -299,8 +319,7 @@ $bg-dark: rgb(42, 42, 112);
     align-items: flex-start;
     flex-direction: column;
     width: 90%;
-    height: 215px;
-    
+    height: 250px;    
     button:first-child{
       margin-right: 0px;
       margin-left: 20px; 
@@ -318,6 +337,7 @@ $bg-dark: rgb(42, 42, 112);
   }
 .BackgroundApp[data-lang="Ar"]{
   .BackgroundApp_contContent{
+    height: 600px;
     p{
       padding-right:8px;
     }
@@ -325,6 +345,7 @@ $bg-dark: rgb(42, 42, 112);
     
     button:nth-child(2){
       margin-top: 20px; 
+      margin-left: 60px;
    }
   }
   }
@@ -333,8 +354,25 @@ $bg-dark: rgb(42, 42, 112);
 
 
 }
+@media(max-width:370px){
 
-//    :effect="'fade'"
- 
+.BackgroundApp_contSwiper {
+      width: 300px ;
+      height: 400px ;
+    }
+  }
+  .BackgroundApp_contContent{ 
+    width:340px;
+  }
+  .BackgroundApp[data-lang="En"]{
+  .BackgroundApp_contContent{
+    height: 650px;
+  }
+  .BackgroundApp[data-lang="Ar"]
+  .BackgroundApp_contContent >div{
+    width: 150px !important;
+
+  }
+  }
  
 </style>

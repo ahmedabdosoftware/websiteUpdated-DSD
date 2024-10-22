@@ -18,7 +18,7 @@
       </div>
 
       <div class="askForOrder">
-        <button @click="DetailsPage(oneProduct.id)" class="ask"> {{lannguage.detailsProduct}}</button>
+        <!-- <button @click="DetailsPage(oneProduct.id)" class="ask"> {{lannguage.detailsProduct}}</button> -->
         <button class="ask ask_whats"> 
           <p>{{lannguage.askByWats}}</p>
           <img src="../../assets/images/whatsapp.png">
