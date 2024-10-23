@@ -8,9 +8,9 @@
           <span> {{ oneProduct.name  }}</span>
           <p class="descrption">{{ oneProduct.description  }}</p>  
           <div class="cont-price">
-            <span  v-if="oneProduct.offerPrice" class="inSaleBefore">{{ oneProduct.priceMaterial }} : سعرال{{ oneProduct.unitName.name }}</span>
-            <span  v-if="oneProduct.offerPrice" class="inSaleAfter">{{ oneProduct.offerPrice }} : سعرال{{ oneProduct.unitName.name }}</span>
-            <span  v-if="!oneProduct.offerPrice" class="outSale">{{ oneProduct.priceMaterial }} : سعرال{{ oneProduct.unitName.name }}</span>
+            <span  v-if="oneProduct.offerPrice && oneProduct.showMatrialPrice" class="inSaleBefore">{{ oneProduct.priceMaterial }} : سعرال{{ oneProduct.unitName.name }}</span>
+            <span  v-if="oneProduct.offerPrice && oneProduct.showMatrialPrice" class="inSaleAfter">{{ oneProduct.offerPrice }} : سعرال{{ oneProduct.unitName.name }}</span>
+            <span  v-if="!oneProduct.offerPrice && oneProduct.showMatrialPrice" class="outSale">{{ oneProduct.priceMaterial }} : سعرال{{ oneProduct.unitName.name }}</span>
             <span  v-if="oneProduct.priceWithLabor && oneProduct.showLaborPrice">{{ oneProduct.priceWithLabor }} $ مصنعية</span>
           </div>
          
@@ -19,10 +19,12 @@
 
       <div class="askForOrder">
         <!-- <button @click="DetailsPage(oneProduct.id)" class="ask"> {{lannguage.detailsProduct}}</button> -->
-        <button class="ask ask_whats"> 
-          <p>{{lannguage.askByWats}}</p>
-          <img src="../../assets/images/whatsapp.png">
-        </button>
+        <a href="https://wa.me/201032247975">
+          <button class="ask ask_whats"> 
+            <p>{{lannguage.askByWats}}</p>
+            <img src="../../assets/images/whatsapp.png">
+          </button>
+        </a>
       </div>
       <div v-if="oneProduct.offerPrice" class="sale_cont">
         <img src="../../assets/images/salePro.png">
@@ -171,6 +173,9 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  a{
+    width: 100%;
+  }
   
 }
 /*no use until now 

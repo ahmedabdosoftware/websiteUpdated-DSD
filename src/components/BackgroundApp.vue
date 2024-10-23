@@ -6,7 +6,7 @@
       <p>{{lannguage.textBackgroundDown}}</p>
      <div>
        <button> {{lannguage.lastestProjects}}</button>
-       <button> {{lannguage.contact}}</button>
+       <button> <a href="https://wa.me/201032247975">{{lannguage.contact}}</a></button>
      </div>
   </div>
   <div class="BackgroundApp_contSwiper">
@@ -183,6 +183,10 @@ $bg-dark: rgb(42, 42, 112);
       color: white;
       background-color: $bg-dark;
       margin-left: 55px;
+      a{
+        color: white;
+
+      }
 
       &:hover {
         color: $bg-dark;
